@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+
+    color: black;
+}
+
+.header {
+    /* Fully opaque background */
+        background-color: #3b5d50;
+        position:fixed;
+        width:1369px;
+
+        /* 50% transparent background */
+
+    padding: 10px;
+}
+
+.header a.navbar-brand,
+.header .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.header .navbar-nav .nav-link:hover {
+    color: #ccc;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #3b5d50;
+background-color: rgba(67, 117, 98, 0.9);
+    padding-top: 20px;
+    position: fixed;
+    top: 56px;
+    /* Height of the header */
+    width: 250px;
+    overflow-y: auto;
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #eec86a;
+}
+
+.content {
+    margin-top: 56px;
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #3E8E41;
+    color: #fff;
+}
+  /* Custom CSS */
+  .pagination .page-item .page-link {
+      color: #fff;
+      /* Text color */
+      background-color: #3b5d50;
+      /* Background color */
+      border-color: #548572;
+      /* Border color */
+  }
+
+  .pagination .page-item .page-link:hover {
+      color: #fff;
+      /* Text color on hover */
+      background-color: #2e5345;
+      /* Background color on hover */
+      border-color: #416859;
+      /* Border color on hover */
+  }
+
