@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Order;
 use App\Models\Orders_detail;
 use Illuminate\Http\Request;
 use Auth;
@@ -136,8 +137,14 @@ public function productUpdate(Request $request, $id){
 }
 //OrderDetails
 public function orderdetails(){
-    $orderdetails=Orders_detail::all();
-    return view('Admin.OrderDetails',compact('orderdetails'));
+    $orders=Order::all();
+    return view('Admin.OrderDetails',compact('orders'));
 }
+//view order
+public function vieworder($id)
+{
+    $orderdetail=Orders_detail::where('order_id',$id)->with('products')->get();
 
+    return view('Admin.vieworder',compact('orderdetail'));
+}
 }

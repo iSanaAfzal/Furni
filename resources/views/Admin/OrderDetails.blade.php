@@ -4,24 +4,31 @@
         <table id="users-table" class="table table-warning table-bordered mt-5">
             <thead class="thead-lite">
                 <tr class="text-dark">
-                    <th scope="col">id</th>
-                    <th scope="col">Order_id</th>
-                    <th scope="col">Product_id</th>
-                    <th scope="col">Quantity</th>
-
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Total Bill</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($orderdetails as $orderdetail)
+                @foreach ($orders as $order)
                     <tr>
-                        <td>{{ $orderdetail->id }}</td>
-                        <td>{{ $orderdetail->order_id }}</td>
-                        <td>{{ $orderdetail->product_id }}</td>
-                        <td>{{ $orderdetail->Quantity }}</td>
+                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->first_name }}</td>
+                        <td>{{ $order->last_name }}</td>
+                        <td>{{ $order->email_address }}</td>
+                        <td>{{ $order->total_bill }}</td>
+                        <td>{{ $order->payment_status }}</td>
+                        <td>
+                            <a href="{{ route('orders.show', $order->id) }}"
+                                class="btn btn-success text-white text-bold">View</a>
+                        </td>
                     </tr>
-                @endforeach()
-
+                @endforeach
             </tbody>
         </table>
     </div>
-@endsection()
+@endsection

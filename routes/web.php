@@ -53,6 +53,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admindashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/adminusers', [AdminController::class, 'users'])->name('admin.users');
     Route::get('/OrderDetails',[AdminController::class,'orderdetails'])->name('admin.orderdetails');
+    Route::get('/order/show/{id}',[AdminController::class,'vieworder'])->name('orders.show');
     Route::get('/Products', [AdminController::class, 'Product'])->name('admin.product');
     Route::get('/productform', [AdminController::class, 'productform'])->name('admin.productform');
     Route::post('/products/store', [AdminController::class, 'productstore'])->name('products.store');

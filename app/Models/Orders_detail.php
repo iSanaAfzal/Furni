@@ -15,7 +15,8 @@ class Orders_detail extends Model
         return $this->belongsTo(Order::class);
     }
     //Products Relationship
-    public function products(){
-       return $this->belongsTo(Product::class);
+    public function products()
+    {
+        return $this->belongsTo(Product::class, 'product_id');
     }
 }
